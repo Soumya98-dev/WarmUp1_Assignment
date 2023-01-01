@@ -1,45 +1,23 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 int main()
 {
-    int N, max = 0;
+    int N, sum = 0;
     cin >> N;
-    vector<int> v;
-    for (int i = 0; i < N; i++)
+    if (N == 1)
     {
-        int a;
-        cin >> a;
-        v.push_back(a);
+        cout << 1;
     }
-    // for(int i = 0; i < v.size(); i++)
-    // {
-    //     if(v.at(i) > max)
-    //     {
-    //         max = v.at(i);
-    //     }
-    // }
-    // Sorting the array
-    bool flag = true;
-    while(flag){
-        flag = false;
-        for (int i = 0; i < v.size(); i++)
+    if (N >= 2)
+    {
+        for (int i = 1; i <= N; i++)
         {
-            int temp = 0;
-            if (v[i] > v[i+1])
-            {
-                flag = true;
-                temp = v[i + 1];
-                v[i + 1] = v[i];
-                v[i] = temp;
-            }
+            sum = sum + i;
         }
+        cout << sum;
     }
 
-    for(int i = 0; i < v.size(); i++)
-    {
-        cout << v[i] << " ";
-    }
+    return 0;
 }
